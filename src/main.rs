@@ -89,7 +89,7 @@ async fn list_messages(
         .q(query)
         .max_results(max_results);
     let req = if let Some(token) = next_page_token {
-        req.param("page-token", token)
+        req.page_token(token)
     } else {
         req
     };
